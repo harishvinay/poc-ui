@@ -8,4 +8,4 @@ npm install
 npm install -g http-server
 http-server
 
-launch broser and open localhost:port to see the UI.
+Launch browser and open localhost:port to see the UI.
