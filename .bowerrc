@@ -1,0 +1,8 @@
+{
+  "proxy":"http://www-proxy.us.oracle.com:80",
+  "https-proxy":"http://www-proxy.us.oracle.com:80",
+  "registry": "http://artifactory-slc.oraclecorp.com/artifactory/api/bower/bower-virtual",
+  "resolvers": [
+    "bower-art-resolver"
+  ]
+}
