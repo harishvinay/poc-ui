@@ -1,5 +1,9 @@
 # poc-ui
 
+Install GIT
+Open terminal and set
+git config --global http.proxy http://www-proxy.us.oracle.com:80
+
 Install NodeJS
 
 After Git Clone do the following
