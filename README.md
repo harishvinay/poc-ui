@@ -10,6 +10,7 @@ After Git Clone do the following
 cd poc-ui
 npm install
 npm install -g http-server
-http-server
+
+To run the server run: "npm run http-server"
 
 Launch browser and open localhost:port to see the UI.

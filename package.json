@@ -1,14 +1,48 @@
 {
-  "name": "ics-ui",
+  "name": "POC-UI For ICS",
   "version": "1.0.0",
-  "description": "",
+  "description": "POC-UI For ICS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "http-server": "node node_modules/http-server/bin/http-server -g -P http://localhost:8555"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "oraclejet": "^3.2.0"
+    "drag-drop-polyfill": "^2.0.0-beta.3",
+    "es6-promise": "4.0.5",
+    "hammerjs": "2.0.8",
+    "jquery": "3.1.1",
+    "jquery-ui": "1.12.0",
+    "knockout": "3.4.0",
+    "oraclejet": "^3.2.0",
+    "proj4": "^2.3.14",
+    "require-css": "0.1.8",
+    "requirejs": "2.3.2",
+    "requirejs-text": "2.0.15",
+    "signals": "1.0.0",
+    "underscore": "^1.8.3",
+    "webcomponents.js": "0.7.24"
+  },
+  "devDependencies": {
+    "bower-art-resolver": "2.0.8",
+    "casperjs": "^1.1.4",
+    "clean-webpack-plugin": "^0.1.16",
+    "compression-webpack-plugin": "^0.4.0",
+    "destroy": "^1.0.4",
+    "graceful-fs": "^4.1.11",
+    "grunt": "1.0.1",
+    "html-webpack-plugin": "^2.29.0",
+    "http-server": "^0.10.0",
+    "json-loader": "^0.5.7",
+    "load-grunt-config": "0.19.2",
+    "opn": "^5.1.0",
+    "rimraf": "^2.6.1",
+    "shim-loader": "^1.0.1",
+    "slimerjs": "^0.10.3",
+    "strip-ansi": "^4.0.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.6.1"
   }
 }
