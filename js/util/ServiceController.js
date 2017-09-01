@@ -1,8 +1,7 @@
 "use strict";
 define(['jquery', 'promise', 'util/ServiceModel'], function ($, Promise, model) {
     var headers = {
-        "x-origin": "swagger",
-        "accept": "application/json"
+        'Authorization': 'Basic ' + btoa('weblogic' + ':' + 'welcome2')
     };
     return {
         get: function (url) {

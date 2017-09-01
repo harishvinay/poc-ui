@@ -41,7 +41,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
-    "http-server": "node node_modules/http-server/bin/http-server -g -P http://localhost:8555"
+    "http-server": "node node_modules/http-server/bin/http-server -g -P http://slc05dcc.us.oracle.com:8001"
   },
   "repository": {
     "type": "git",
