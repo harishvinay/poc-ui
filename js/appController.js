@@ -31,22 +31,6 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
                 {
                     name: 'Connections', id: 'connections',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
-                },
-                {
-                    name: 'Lookups', id: 'connections',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-info-icon-24'
-                },
-                {
-                    name: 'Packages', id: 'connections',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
-                },
-                {
-                    name: 'Agents', id: 'connections',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
-                },
-                {
-                    name: 'Adapters', id: 'connections',
-                    iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-people-icon-24'
                 }
             ];
             self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});

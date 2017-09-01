@@ -18,6 +18,7 @@ requirejs.config(
                 'text': '../node_modules/requirejs-text/text',
                 'signals': '../node_modules/signals/dist/signals',
                 'customElements': '../node_modules/oraclejet/dist/js/libs/webcomponents/CustomElements',
+                'underscore': '../node_modules/underscore/underscore-min',
                 'metadata-list-component': 'libs/metadata-list-component/metadata-list-component-noDeps'
             },
         shim:
