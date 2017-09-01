@@ -7,7 +7,7 @@ package-lock.json
 node_modules
 
 # misc
-.idea
+.idea/
 .idea/workspace.xml
 .DS_Store
 .env
