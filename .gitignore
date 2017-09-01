@@ -2,3 +2,13 @@
 /html/nbproject/private/
 dist/
 package-lock.json
+
+# dependencies
+node_modules
+
+# misc
+.idea
+.idea/workspace.xml
+.DS_Store
+.env
+npm-debug.log
