@@ -1,13 +1,8 @@
 {
-  "name": "POC-UI For ICS",
+  "name": "poc-ui",
   "version": "1.0.0",
-  "description": "POC-UI For ICS",
+  "description": "poc-ui",
   "main": "index.js",
-  "scripts": {
-    "http-server": "node node_modules/http-server/bin/http-server -g -P http://localhost:8555"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "drag-drop-polyfill": "^2.0.0-beta.3",
     "es6-promise": "4.0.5",
@@ -44,5 +39,18 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.6.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harishvinay/poc-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harishvinay/poc-ui/issues"
+  },
+  "homepage": "https://github.com/harishvinay/poc-ui#readme"
 }
