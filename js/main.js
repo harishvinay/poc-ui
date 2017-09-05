@@ -6,19 +6,18 @@ requirejs.config(
 
         paths:
             {
-                'knockout': '../node_modules/knockout/build/output/knockout-latest.debug',
-                'jquery': '../node_modules/jquery/dist/jquery',
-                'jqueryui-amd': '../node_modules/jquery-ui/ui',
-                'promise': '../node_modules/es6-promise/dist/es6-promise',
-                'hammerjs': '../node_modules/hammerjs/hammer',
-                'ojdnd': '../node_modules/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0',
-                'ojs': '../node_modules/oraclejet/dist/js/libs/oj/debug',
-                'ojL10n': '../node_modules/oraclejet/dist/js/libs/oj/ojL10n',
-                'ojtranslations': '../node_modules/oraclejet/dist/js/libs/oj/resources',
-                'text': '../node_modules/requirejs-text/text',
-                'signals': '../node_modules/signals/dist/signals',
-                'customElements': '../node_modules/oraclejet/dist/js/libs/webcomponents/CustomElements',
-                'underscore': '../node_modules/underscore/underscore-min',
+                'knockout': '../bower_components/knockout/dist/knockout.debug',
+                'jquery': '../bower_components/jquery/dist/jquery',
+                'jqueryui-amd': '../bower_components/jquery-ui/ui',
+                'promise': '../bower_components/es6-promise/promise',
+                'hammerjs': '../bower_components/hammerjs/hammer',
+                'ojdnd': '../bower_components/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.js',
+                'ojs': '../bower_components/oraclejet/dist/js/libs/oj/debug',
+                'ojL10n': '../bower_components/oraclejet/dist/js/libs/oj/ojL10n',
+                'ojtranslations': '../bower_components/oraclejet/dist/js/libs/oj/resources',
+                'text': '../bower_components/text/text',
+                'signals': '../bower_components/js-signals/dist/signals',
+                'underscore': '../bower_components/underscore/underscore',
                 'metadata-list-component': 'libs/metadata-list-component/metadata-list-component-noDeps'
             },
         shim:
