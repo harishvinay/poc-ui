@@ -1,5 +1,5 @@
 {
-  "name": "suite-components",
+  "name": "poc-ui",
   "dependencies": {
     "requirejs": "2.1.16",
     "jquery": "2.1.3",
@@ -8,7 +8,6 @@
     "underscore": "1.8.3",
     "oraclejet": "2.0.0",
     "text": "2.0.12",
-    "composer.js.utils": "git+https://orahub.oraclecorp.com/fmw-bpm-composer/composer.js.utils.git#develop",
     "js-signals": "signals#^1.0.0"
   },
   "devDependencies": {
