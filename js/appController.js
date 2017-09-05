@@ -1,7 +1,31 @@
-define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarraytabledatasource'],
-    function (oj, ko) {
+define([
+        'ojs/ojcore',
+        'knockout',
+        'cloud-app-switcher',
+        'ojs/ojrouter',
+        'ojs/ojknockout',
+        'ojs/ojarraytabledatasource'
+    ],
+    function (oj, ko, SuiteComponents) {
         function ControllerViewModel() {
             var self = this;
+
+            var switcher = SuiteComponents.getSwitcher();
+
+            $('.hamburger').on('click', function () {
+
+            });
+
+            var toggleNav = "toggle_nav";
+            switcher._appSwitcherVM = null;
+            ko.components.unregister("cloud-app-switcher");
+            switcher.init(toggleNav, 'js/data/navData.json', 'welcome', true, {
+                label: 'Home',
+                type: "URL",
+                properties: {
+                    url: '/ic/home'
+                }
+            });
 
             var smQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.SM_ONLY);
             self.smScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);

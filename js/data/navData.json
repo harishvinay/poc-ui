@@ -1,0 +1,14 @@
+[
+  {
+    "attr": {
+      "id": "welcome",
+      "label": "Integration",
+      "type": "JQUERY",
+      "executeOnBack": true,
+      "properties": {
+        "event": "rootNav",
+        "page": "welcome"
+      }
+    }
+  }
+]
