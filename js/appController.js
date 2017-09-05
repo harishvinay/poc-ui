@@ -38,6 +38,23 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarray
             self.appName = ko.observable("Integration Cloud Service");
             self.userLogin = ko.observable("Weblogic");
 
+            self.toggleNavigation = function () {
+            };
+
+            self.buttonDisplay = ko.pureComputed(function () {
+                return true;
+            });
+
+            self.userName = 'weblogic';
+
+            self.userMenuSelect = function (event, ui) {
+
+            };
+
+            self.helpMenuSelect = function (event, ui) {
+
+            };
+
             function footerLink(name, id, linkTarget) {
                 this.name = name;
                 this.linkId = id;

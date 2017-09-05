@@ -1,0 +1,154 @@
+@import "_colors.css";
+
+.oracle-logo {
+    width: 91px;
+}
+
+.header__user-button .oj-button-text {
+    display: none;
+}
+
+.header__user-button {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 3px solid #fff !important;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #878c90 !important;
+}
+
+.header__user-button.oj-hover {
+    box-shadow: 0 0 0 1px #85bbe7 !important;
+}
+
+/*.header__user-button.oj-active, .header__user-button.oj-selected {*/
+    /*box-shadow: 0 0 0 1px $ darkBlueColor !important;*/
+/*}*/
+
+.oj-button-text-icons .oj-button-text-icon-end.header__user-button .oj-button-icon.oj-end {
+    margin: 0;
+}
+
+.header-user-icon {
+    margin: 0 !important;
+}
+
+.header__help-button {
+    margin: 0 20px 0 20px !important;
+    border: none !important;
+}
+
+.header__help-button .oj-button-text {
+    display: none;
+}
+
+.header__help-button .oj-fwk-icon-help {
+    margin: 0 !important;
+}
+
+.oj-button.oj-active.oj-hover.oj-button-half-chrome.header__help-button,
+.oj-button.oj-hover.oj-button-half-chrome.header__help-button,
+.oj-button.oj-active.oj-button-half-chrome.header__help-button,
+.oj-button.oj-selected.oj-button-half-chrome.header__help-button {
+    border: none;
+    background: none;
+}
+
+.oj-button.oj-selected.oj-button-half-chrome.header__help-button,
+.oj-button.oj-active.oj-button-half-chrome.header__help-button {
+
+    /*.oj-button-icon {*/
+    /*color: $ iconActive;*/
+    /*}*/
+
+}
+
+.oj-button.oj-active.oj-hover.oj-button-half-chrome.header__user-button,
+.oj-button.oj-hover.oj-button-half-chrome.header__user-button,
+.oj-button.oj-active.oj-button-half-chrome.header__user-button,
+.oj-button.oj-selected.oj-button-half-chrome.header__user-button {
+    border: none;
+    background: none;
+}
+
+.header-user-icon::before {
+    width: 26px;
+    height: 26px;
+    border-radius: 50% !important;
+    content: url(images/user_menu.svg);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header-hamburger-icon {
+    margin: 0 !important;
+}
+
+.header-hamburger-icon:before {
+    width: 24px;
+    height: 14px;
+    content: url(images/hamburger_ena.svg);
+    display: inline-block;
+    padding-top: 3px;
+}
+
+.oj-button.hamburger {
+    border: none !important;
+}
+
+.oj-hover.oj-button.oj-button-half-chrome.hamburger {
+    border: none;
+    background: none;
+}
+
+.oj-web-applayout-header-title {
+    padding: 0 5px;
+    font-size: 16px;
+    color: #454545;
+}
+
+.hamburger.oj-button.oj-focus {
+    box-shadow: none;
+    outline-width: 1px;
+}
+
+.logo__container {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.oj-web-applayout-header {
+
+.oj-select-choice {
+    border: none;
+    background: none;
+    min-width: 0;
+    max-width: none;
+}
+
+.oj-select-choice {
+    margin-top: 3px !important;
+    outline: 0;
+}
+
+.oj-select-chosen {
+    padding-right: 22px !important;
+    font-size: 16px;
+    color: #454545;
+}
+
+.oj-disabled {
+
+.oj-select-arrow {
+    display: none;
+}
+
+}
+
+.oj-select.oj-disabled .oj-select-choice {
+    color: #333 !important;
+}
+
+}

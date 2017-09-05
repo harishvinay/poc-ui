@@ -18,7 +18,8 @@ requirejs.config(
                 'text': '../bower_components/text/text',
                 'signals': '../bower_components/js-signals/dist/signals',
                 'underscore': '../bower_components/underscore/underscore',
-                'metadata-list-component': 'libs/metadata-list-component/metadata-list-component-noDeps'
+                'metadata-list-component': 'libs/metadata-list-component/metadata-list-component-noDeps',
+                'cloud-app-switcher': 'libs/cloud-app-switcher/cloud-app-switcher'
             },
         shim:
             {
