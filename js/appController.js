@@ -2,24 +2,28 @@ define([
         'ojs/ojcore',
         'knockout',
         'cloud-app-switcher',
+        'text!data/navData.json',
         'ojs/ojrouter',
         'ojs/ojknockout',
         'ojs/ojarraytabledatasource'
     ],
-    function (oj, ko, SuiteComponents) {
+    function (oj, ko, SuiteComponents, data) {
         function ControllerViewModel() {
             var self = this;
 
             var switcher = SuiteComponents.getSwitcher();
 
             $('.hamburger').on('click', function () {
-
             });
+
+            var json = JSON.parse(data);
 
             var toggleNav = "toggle_nav";
             switcher._appSwitcherVM = null;
+            switcher.changeSelected('home');
             ko.components.unregister("cloud-app-switcher");
-            switcher.init(toggleNav, 'js/data/navData.json', 'welcome', true, {
+
+            switcher.init(toggleNav, json, 'f1', true, {
                 label: 'Home',
                 type: "URL",
                 properties: {

@@ -1,14 +1,200 @@
 [
   {
     "attr": {
-      "id": "welcome",
-      "label": "Integration",
-      "type": "JQUERY",
-      "executeOnBack": true,
-      "properties": {
-        "event": "rootNav",
-        "page": "welcome"
+      "id": "public",
+      "label": "Public",
+      "type": "NONE"
+    },
+    "children": [
+      {
+        "attr": {
+          "id": "f1",
+          "label": "New Tab URL",
+          "type": "URL",
+          "properties": {
+            "target": "_blank",
+            "url": "http://www.google.com"
+          }
+        }
+      },
+      {
+        "attr": {
+          "id": "f2",
+          "label": "Relative URL (../env)",
+          "type": "URL",
+          "properties": {
+            "url": "../env"
+          }
+        }
+      },
+      {
+        "attr": {
+          "id": "f3",
+          "label": "Jquery Event",
+          "type": "JQUERY",
+          "properties": {
+            "event": "myEvent",
+            "extraData": "getting Extra Data!"
+          }
+        }
+      },
+      {
+        "attr": {
+          "id": "f4",
+          "label": "ADF listener",
+          "type": "ADF",
+          "properties": {
+            "source": ".fail",
+            "listener": "adfListener"
+          }
+        }
       }
-    }
+    ]
+  },
+  {
+    "attr": {
+      "id": "private",
+      "label": "Private",
+      "type": "NONE"
+    },
+    "children": [
+      {
+        "attr": {
+          "id": "f5",
+          "label": "Letter to Parents - Kindergarden",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f6",
+          "label": "Inspection Report",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f7",
+          "label": "Patent Declaration (Signed Copy)",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f8",
+          "label": "Presentation - Openworld 2014",
+          "type": "NONE"
+        }
+      }
+    ]
+  },
+  {
+    "attr": {
+      "id": "work",
+      "label": "Work",
+      "type": "NONE"
+    },
+    "children": [
+      {
+        "attr": {
+          "id": "f9",
+          "label": "Waiver For Grant Street Garage",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f10",
+          "label": "Letter to Parents - Kindergarden",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f11",
+          "label": "Inspection Report",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f12",
+          "label": "Patent Declaration (Signed Copy)",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f12",
+          "label": "Presentation - Openworld 2014",
+          "type": "NONE"
+        }
+      }
+    ]
+  },
+  {
+    "attr": {
+      "id": "others",
+      "label": "others",
+      "type": "NONE"
+    },
+    "children": [
+      {
+        "attr": {
+          "id": "f14",
+          "label": "Christmas Planning",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f15",
+          "label": "Budget (2014)",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f16",
+          "label": "New Year KK",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f17",
+          "label": "Waiver For Grant Street Garage",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f18",
+          "label": "Letter to Parents - Kindergarden",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f19",
+          "label": "Inspection Report",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f20",
+          "label": "Patent Declaration (Signed Copy)",
+          "type": "NONE"
+        }
+      },
+      {
+        "attr": {
+          "id": "f21",
+          "label": "Presentation - Openworld 2014",
+          "type": "NONE"
+        }
+      }
+    ]
   }
 ]
