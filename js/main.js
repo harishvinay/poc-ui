@@ -44,30 +44,42 @@ require([
         'jquery',
         'knockout',
         'text!data/navData.json',
-        'navController'],
+        'navController',
+        'ojs/ojmodule',
+        'promise'
+    ],
     function (SuiteComponents, $, ko, json, nav) {
-        var data = JSON.parse(json);
-        var switcher = SuiteComponents.getSwitcher();
-        switcher.init('toggleNav', data);
 
-        $('.hamburger').on('click', function () {
-            $(document).trigger('toggleNav');
+        function ViewModel() {
+            var data = JSON.parse(json);
+            self.switcher = SuiteComponents.getSwitcher();
+            self.switcher.init('toggleNav', data);
+
+            $('.hamburger').on('click', function () {
+                $(document).trigger('toggleNav');
+            });
+
+            self.userName = 'weblogic';
+
+            self.buttonDisplay = ko.pureComputed(function () {
+                return true;
+            });
+
+            self.userMenuSelect = function (event, ui) {
+
+            };
+
+            self.helpMenuSelect = function (event, ui) {
+
+            };
+
+            self.moduleSettings = nav.moduleConfig;
+
+        }
+
+        $(function () {
+            console.log("Rendering UI...");
+            ko.applyBindings(new ViewModel(), document.getElementById('globalBody'));
         });
-
-        self.userName = 'weblogic';
-
-        self.buttonDisplay = ko.pureComputed(function () {
-            return true;
-        });
-
-        self.userMenuSelect = function (event, ui) {
-
-        };
-
-        self.helpMenuSelect = function (event, ui) {
-
-        };
-
-        ko.applyBindings();
     }
 );

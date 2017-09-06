@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/home.css"/>
     <link rel="stylesheet" href="css/header.css" type="text/css"/>
     <link rel="stylesheet" href="css/override.css" type="text/css"/>
+    <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 </head>
 <body class="oj-web-applayout-body">
 <div id="globalBody" class="oj-web-applayout-page">
@@ -72,8 +73,10 @@
                 </div>
             </header>
             <!--<div role="main" class="oj-web-applayout-max-width oj-web-applayout-content"-->
-            <!--data-bind="ojModule: router.moduleConfig">-->
+                 <!--data-bind="ojModule: moduleSettings">-->
             <!--</div>-->
+            <div data-bind="ojModule: {name: 'dashboard'}">
+            </div>
             <!--<footer class="oj-web-applayout-footer" role="contentinfo">-->
             <!--<div class="oj-web-applayout-footer-item oj-web-applayout-max-width">-->
             <!--<ul>-->
@@ -89,6 +92,5 @@
         </div>
     </div>
 </div>
-<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>
