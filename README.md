@@ -8,6 +8,7 @@ Install NodeJS
 
 After Git Clone do the following
 cd poc-ui
+bower install
 npm install
 npm install -g http-server
 
