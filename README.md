@@ -6,11 +6,12 @@ git config --global http.proxy http://www-proxy.us.oracle.com:80
 
 Install NodeJS
 
-After Git Clone do the following
-cd poc-ui
-bower install
-npm install
-npm install -g http-server
+After git clone do the following
+
+$ cd poc-ui
+$ bower install
+$ npm install
+$ npm install -g http-server
 
 To run the server run: "npm run http-server"
 
