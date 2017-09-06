@@ -12,33 +12,25 @@
     <link rel="stylesheet" href="css/home.css"/>
     <link rel="stylesheet" href="css/header.css" type="text/css"/>
     <link rel="stylesheet" href="css/override.css" type="text/css"/>
-
 </head>
 <body class="oj-web-applayout-body">
-<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
-
 <div id="globalBody" class="oj-web-applayout-page">
     <div id="container" class="oj-sm-flex-wrap-nowrap oj-flex" style="width:100%;height:100%">
-        <div id="nav" style="position: relative">
-            <!-- ko component: {name: 'cloud-app-switcher'} -->
-            <!-- /ko -->
-        </div>
+        <cloud-app-switcher></cloud-app-switcher>
         <div id="page" class="oj-flex-item" style="position: relative; width:100%; height: 100%">
             <header role="banner"
                     class="oj-web-applayout-header">
                 <div class="oj-web-applayout oj-flex-bar oj-flex oj-sm-align-items-center" style="padding: 0 20px;">
-                    <div class="oj-flex-bar-middle oj-sm-align-items-center">
-                        <button data-bind="ojComponent: {component:'ojButton',
-                         label: 'Toggle',
-                         chroming: 'half',
-                         display: 'icons',
-                         icons: {start: 'header-hamburger-icon'}}, click: toggleNavigation" class="hamburger"></button>
-                        <div class="logo__container">
-                            <img alt="Oracle Logo" class="oracle-logo" src="css/images/oracle_logo.svg">
-                            <h1 class="oj-web-applayout-header-title oj-sm-only-hide" title="Integration Cloud">
-                                Integration
-                                Cloud</h1>
-                        </div>
+                    <button data-bind="ojComponent: {component:'ojButton',
+                     label: 'Toggle outer offcanvas',
+                     chroming: 'half',
+                     display: 'icons',
+                     icons: {start: 'oj-fwk-icon-hamburger oj-fwk-icon'}}" class="hamburger"></button>
+                    <div class="logo__container">
+                        <img alt="Oracle Logo" class="oracle-logo" src="css/images/oracle_logo.svg"/>
+                        <h1 class="oj-web-applayout-header-title oj-sm-only-hide" title="Integration Cloud">
+                            Integration Cloud
+                        </h1>
                     </div>
                     <div class="oj-flex-bar-end">
                         <!--Responsive Toolbar-->
@@ -47,18 +39,18 @@
                             <button id="help-button"
                                     class="header__help-button"
                                     data-bind="ojComponent: {component: 'ojButton',
-                        display: 'icons',
-                        display: buttonDisplay,
-                        icons: {end:'oj-fwk-icon-help oj-fwk-icon'},
-                        chroming: 'half', menu: '#menuHelp'}">
+                    display: 'icons',
+                    display: buttonDisplay,
+                    icons: {end:'oj-fwk-icon-help oj-fwk-icon'},
+                    chroming: 'half', menu: '#menuHelp'}">
                             </button>
                             <button id="userMenu"
                                     class="header__user-button"
                                     data-bind="ojComponent: {component: 'ojButton', title: userName,
-                        display: 'icons',
-                        display: buttonDisplay,
-                        icons: {end:'header-user-icon'},
-                        chroming: 'half', menu: '#menu1'}">
+                    display: 'icons',
+                    display: buttonDisplay,
+                    icons: {end:'header-user-icon'},
+                    chroming: 'half', menu: '#menu1'}">
                             </button>
 
                             <ul id='menu1' data-bind="ojComponent: {component: 'ojMenu', select: userMenuSelect}"
@@ -79,23 +71,24 @@
                     </div>
                 </div>
             </header>
-            <div role="main" class="oj-web-applayout-max-width oj-web-applayout-content"
-                 data-bind="ojModule: router.moduleConfig">
-            </div>
-            <footer class="oj-web-applayout-footer" role="contentinfo">
-                <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
-                    <ul>
-                        <!-- ko foreach: footerLinks -->
-                        <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
-                        <!-- /ko -->
-                    </ul>
-                </div>
-                <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
-                    Copyright © 2014, 2016 Oracle and/or its affiliates All rights reserved.
-                </div>
-            </footer>
+            <!--<div role="main" class="oj-web-applayout-max-width oj-web-applayout-content"-->
+            <!--data-bind="ojModule: router.moduleConfig">-->
+            <!--</div>-->
+            <!--<footer class="oj-web-applayout-footer" role="contentinfo">-->
+            <!--<div class="oj-web-applayout-footer-item oj-web-applayout-max-width">-->
+            <!--<ul>-->
+            <!--&lt;!&ndash; ko foreach: footerLinks &ndash;&gt;-->
+            <!--<li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>-->
+            <!--&lt;!&ndash; /ko &ndash;&gt;-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">-->
+            <!--Copyright © 2014, 2016 Oracle and/or its affiliates All rights reserved.-->
+            <!--</div>-->
+            <!--</footer>-->
         </div>
     </div>
 </div>
+<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>

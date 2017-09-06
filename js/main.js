@@ -39,26 +39,35 @@ requirejs.config(
     }
 );
 
-require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout',
-        'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojnavigationlist', 'ojs/ojbutton', 'ojs/ojtoolbar'],
-    function (oj, ko, app) {
-        $(function () {
-            function init() {
-                oj.Router.sync().then(
-                    function () {
-                        ko.applyBindings(app, document.getElementById('globalBody'));
-                    },
-                    function (error) {
-                        oj.Logger.error('Error in root start: ' + error.message);
-                    }
-                );
-            }
+require([
+        'cloud-app-switcher',
+        'jquery',
+        'knockout',
+        'text!data/navData.json',
+        'navController'],
+    function (SuiteComponents, $, ko, json, nav) {
+        var data = JSON.parse(json);
+        var switcher = SuiteComponents.getSwitcher();
+        switcher.init('toggleNav', data);
 
-            if ($(document.body).hasClass('oj-hybrid')) {
-                document.addEventListener("deviceready", init);
-            } else {
-                init();
-            }
+        $('.hamburger').on('click', function () {
+            $(document).trigger('toggleNav');
         });
+
+        self.userName = 'weblogic';
+
+        self.buttonDisplay = ko.pureComputed(function () {
+            return true;
+        });
+
+        self.userMenuSelect = function (event, ui) {
+
+        };
+
+        self.helpMenuSelect = function (event, ui) {
+
+        };
+
+        ko.applyBindings();
     }
 );
