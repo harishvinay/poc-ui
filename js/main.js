@@ -40,46 +40,18 @@ requirejs.config(
 );
 
 require([
-        'cloud-app-switcher',
         'jquery',
         'knockout',
-        'text!data/navData.json',
         'navController',
+        'ojs/ojknockout',
         'ojs/ojmodule',
-        'promise'
+        'ojs/ojrouter'
     ],
-    function (SuiteComponents, $, ko, json, nav) {
-
-        function ViewModel() {
-            var data = JSON.parse(json);
-            self.switcher = SuiteComponents.getSwitcher();
-            self.switcher.init('toggleNav', data);
-
-            $('.hamburger').on('click', function () {
-                $(document).trigger('toggleNav');
-            });
-
-            self.userName = 'weblogic';
-
-            self.buttonDisplay = ko.pureComputed(function () {
-                return true;
-            });
-
-            self.userMenuSelect = function (event, ui) {
-
-            };
-
-            self.helpMenuSelect = function (event, ui) {
-
-            };
-
-            self.moduleSettings = nav.moduleConfig;
-
-        }
+    function ($, ko, nav) {
 
         $(function () {
             console.log("Rendering UI...");
-            ko.applyBindings(new ViewModel(), document.getElementById('globalBody'));
+            ko.applyBindings(nav, document.getElementById('globalBody'));
         });
     }
 );
