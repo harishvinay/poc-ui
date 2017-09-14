@@ -5,7 +5,7 @@ define(['jquery', 'promise', 'util/ServiceModel'], function ($, Promise, model) 
     };
     return {
         get: function (url) {
-            var promise = new Promise(function (resolve, reject) {
+            return new Promise(function (resolve, reject) {
                 $.ajax({
                     url: url,
                     type: 'GET',
@@ -19,13 +19,11 @@ define(['jquery', 'promise', 'util/ServiceModel'], function ($, Promise, model) 
                     error: function (xhr, status, error) {
                         reject({xhr: xhr, status: status, error: error});
                     },
-                    headers: headers,
+                    headers: headers
                 }).always(function () {
                     model.afterSend();
                 });
             });
-
-            return promise;
         },
         post: function (url, data) {
             var promise = new Promise(function (resolve, reject) {

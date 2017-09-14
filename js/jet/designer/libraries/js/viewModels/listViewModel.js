@@ -8,6 +8,8 @@ define(['ojs/ojcore', 'knockout', 'jet/designer/libraries/js/viewModels/libraryC
         var self = this;
         
         self.restURL = "/icsapis/v2/libraries";
+        self.useDummyResponse = true;
+        self.response = [];
         self.libraryContextParam = null;
     
         self.deleteResource = function(urlPath) {

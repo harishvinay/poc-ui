@@ -5,6 +5,9 @@ define(['ojs/ojcore', 'knockout', 'text!jet/designer/adapters/js/views/detailsDi
         var self = this;
         self.restURL = "/icsapis/v2/adapters";
 
+        self.useDummyResponse = true;
+        self.response = [];
+
         self.constructRowData = function(jsonRow) {
             var rData = self.catalog().rowData();
             

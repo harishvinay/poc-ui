@@ -11,8 +11,9 @@ define(['ojs/ojcore', 'knockout',
                     'metadata-list-component',
                     'jet/designer/agents/js/viewModels/headerModel',
                     'jet/designer/agents/js/viewModels/filterPanelModel',
-                    'jet/designer/agents/js/viewModels/listViewModel'
-], function (oj, ko, Catalog, headerModel, filterPanelModel, listViewModel) {
+                    'jet/designer/agents/js/viewModels/listViewModel',
+                    'util/ServiceController'
+], function (oj, ko, Catalog, headerModel, filterPanelModel, listViewModel, service) {
     /**
      * The view model for the main content view template
      */
@@ -21,10 +22,23 @@ define(['ojs/ojcore', 'knockout',
         
         self.handleActivated = function(info) {
             self.catalog = Catalog.app.createInstance(headerModel, filterPanelModel, listViewModel, "Agent");
+            self.fetchData(self.catalog);
         };
 
         self.handleAttached = function (info) {
             $(Catalog.catalogTemplate).appendTo($('#metadata-list-container'));
+        };
+
+        self.fetchData = function (catalog) {
+            service.get(listViewModel.restURL).then(
+                function (res) {
+                    listViewModel.response = res.data;
+                    catalog.refresh();
+                },
+                function (err) {
+                    console.log(err);
+                }
+            );
         };
         
         self.createView = function() {

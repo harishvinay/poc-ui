@@ -10,7 +10,7 @@ requirejs.config(
                 'knockout-amd-helpers' : 'libs/knockout-amd-helpers/build/knockout-amd-helpers',
                 'jquery': '../bower_components/jquery/dist/jquery',
                 'jqueryui-amd': '../bower_components/jquery-ui/ui',
-                'promise': '../bower_components/es6-promise/promise',
+                'promise': '../node_modules/es6-promise/dist/es6-promise.min',
                 'hammerjs': '../bower_components/hammerjs/hammer',
                 'ojdnd': '../bower_components/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.js',
                 'ojs': '../bower_components/oraclejet/dist/js/libs/oj/debug',

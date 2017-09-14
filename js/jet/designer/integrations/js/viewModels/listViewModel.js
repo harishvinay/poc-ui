@@ -9,6 +9,9 @@ define(['ojs/ojcore', 'knockout', 'text!jet/designer/integrations/js/views/activ
 
         self.restURL = "/icsapis/v2/integrations";
 
+        self.useDummyResponse = true;
+        self.response = [];
+
         // Customize method to create common row data based on the resource type and its rest response.
         // This method needs to be passed as a function parameter to initialize common catalog data model
         self.constructRowData = function (jsonRow) {

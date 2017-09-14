@@ -8,6 +8,8 @@ define(['ojs/ojcore', 'knockout', 'jet/js/utils'
         var self = this;
         
         self.restURL = "/icsapis/v2/connections";
+        self.useDummyResponse = true;
+        self.response = [];
         
         // Customize method to create common row data based on the resource type and its rest response.
         // This method needs to be passed as a function parameter to initialize common catalog data model
