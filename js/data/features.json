@@ -1,0 +1,78 @@
+{
+  "integrations": {
+    "exposed": true,
+    "types": {
+      "orchestration": true,
+      "actions": {
+        "create": true,
+        "view": true,
+        "edit": true,
+        "activate": true
+      },
+      "mapdata": true,
+      "publishtoics": true,
+      "subscribetoics": true
+    },
+    "actions": {
+      "import": true,
+      "create": true,
+      "view": true,
+      "edit": true,
+      "activate": true
+    }
+  },
+  "connections": {
+    "exposed": true,
+    "types": {
+      "adobeesign": true,
+      "aq": true,
+      "ariba": true,
+      "concur": true,
+      "googlecalendar": true,
+      "googlemail": true,
+      "googletask": true,
+      "netsuite": true,
+      "occ": true,
+      "oraclecpq": true,
+      "oracledb": true,
+      "rest": true,
+      "soap": true,
+      "twitter": true,
+      "workday": true
+    },
+    "actions": {
+      "create": true,
+      "view": true,
+      "edit": true,
+      "activate": true
+    }
+  },
+  "lookups": {
+    "exposed": true,
+    "actions": {
+      "import": true,
+      "create": true
+    }
+  },
+  "libraries": {
+    "exposed": true,
+    "types": {
+      "js": {
+        "classification": {
+          "orchestration": true,
+          "xpath": true,
+          "adapter": false
+        }
+      },
+      "java": false
+    },
+    "actions": {
+      "import": true,
+      "create": true,
+      "view": true,
+      "edit": true,
+      "activate": true
+    }
+  },
+  "monitoring": true
+}

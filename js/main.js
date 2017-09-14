@@ -51,7 +51,14 @@ require([
 
         $(function () {
             console.log("Rendering UI...");
-            ko.applyBindings(nav, document.getElementById('globalBody'));
+            oj.Router.sync().then(
+                function () {
+                    ko.applyBindings(nav, document.getElementById('globalBody'));
+                },
+                function (error) {
+                    oj.Logger.error('Error in root start: ' + error.message);
+                }
+            );
         });
     }
 );
