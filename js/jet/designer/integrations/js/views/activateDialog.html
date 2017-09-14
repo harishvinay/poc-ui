@@ -1,0 +1,52 @@
+<div class="oj-dialog-body">
+    <div class="oj-form-layout">
+        <span style="width:500px !important;font-weight:bold;font-size:18px;" data-bind="text: metadata_name"></span>
+        <div style="height: 25px"></div>
+          <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-flex-item">
+                <label id="traceLabel" style="font-weight:bold;" data-bind="text: traceTitle"></label><span data-bind="text: traceDescription"></span>
+                <div style="height: 10px"></div>
+                <div>
+                    <span class="oj-choice-item">
+                        <input id="trace" type="checkbox" data-bind="checked: tracing"/>
+                        <label for="trace" data-bind="text: traceCheckboxLabel"></label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="height: 10px"></div>
+          <div style="margin-left: 20px;" class="oj-flex oj-flex-items-pad">
+            <div class="oj-flex-item">
+                <div>
+                        <input id="payload" type="checkbox" data-bind="checked: payload"/>
+                        <label for="payload" data-bind="text: payloadCheckboxLabel"></label></span>
+                </div>
+            </div>
+        </div>                
+        <div style="height: 10px"></div>
+        <div class="oj-form-layout">
+            <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-1 oj-md-labels-inline">
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <div class="warn__icon-active"></div>
+                    </div>
+                    <div class="oj-flex-item">
+                        <span id="vallb" data-bind="text: warningMessage"></span>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<div class="oj-dialog-footer">
+    <button id="dialogConfirmBtn"
+            data-bind="ojComponent: {component: 'ojButton', label: confirmButtonLabel}, enable: enableConfirm, click: selfDisableAndInvoke.bind(this)"
+            autofocus="autofocus" style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default">
+    </button>
+    <button id="dlgCloseBtn"
+            data-bind="ojComponent: {component: 'ojButton', label: 'Cancel'}, click: close.bind(this)"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+    </button>
+</div>

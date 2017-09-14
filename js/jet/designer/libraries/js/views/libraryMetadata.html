@@ -1,0 +1,215 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates. All rights reserved.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+  <div class="oj-flex oj-sm-align-items-center" style="background:#027bc7; height:65px;">
+            <div class="oj-flex-item" style="margin-left:30px">
+                <span style="font-size:34px; color:#fff; font-weight:100;" data-bind="text: title()"></span>
+            </div>
+            <div class="oj-flex-item oj-sm-flex-initial"> 
+                <button id= "exportButton" style="background:#027bc7; color:white; padding-right:10px;"
+                       data-bind="click: exportLibraryMetadataActionHandler, 
+                       ojComponent: { component: 'ojButton', label: 'Export Metadata' }">
+                </button>
+                <button id= "saveButton" style="background:#027bc7; color:white; padding-right:10px;"
+                       data-bind="click: saveClicked, 
+                       ojComponent: { component: 'ojButton', label: 'Save' }">
+                </button>
+                <button id= "buttonClose" style="background:#027bc7; color:white; padding-left:10px; margin-right:40px;"
+                       data-bind="click: closeClicked, 
+                       ojComponent: { component: 'ojButton', label: 'Close' }">
+                </button>
+            </div>
+ </div>
+  <div class="oj-flex oj-sm-flex-items-initial" style="background-color: white;padding-top:25px; padding-left:50px;padding-bottom:100px;">
+    <div class="oj-flex-item">
+        <div class="oj-flex ">
+                <div class="oj-flex filter-panel" style="width:160px;">
+                       <h3> <strong> Functions </strong>  </h3>
+                </div>
+                <div class="oj-flex" style="padding-right:10px;">    
+                       <button id="menuButton" 
+                                       data-bind="ojComponent: {component: 'ojButton',icons:{start:'oj-icon filter-func-icon'} , display:'icons', chroming:'half',
+                                       menu: '#sortMenu'}">
+                               </button>
+                               <ul id="sortMenu" style="display:none" 
+                                   data-bind="ojComponent: {component: 'ojMenu', select: filterByStatus}">
+                                             <li id="All">
+                                                 <a href="#"><span class="oj-menu-item-icon "></span>  All</a>
+                                             </li>
+                                             <li id="Configured">
+                                               <a href="#"><span class="oj-menu-item-icon"></span>Configured</a>
+                                             </li>
+                                              <li id="NonConfigured">
+                                               <a href="#"><span class="oj-menu-item-icon"></span>Non Configured</a>
+                                             </li>
+                               </ul>
+                  </div>
+                <div class="oj-flex">    
+                 <button id= "sortButton", 
+                       data-bind="click: handleSortCriteriaChange, 
+                       ojComponent: { component: 'ojButton', icons:{start:'oj-icon sort-func-icon'} , display:'icons', chroming:'half'}">
+                </button>
+            </div>
+            
+       </div>
+        <div class="oj-flex-item">
+            <div class="oj-flex">
+                <input id="filterDepartId" maxlength='30' style="width:300px;" placeholder="Search functions" data-bind="event: {keyup: handleKeyUp}, textInput: filter, ojComponent:{component:'ojInputText'}"/>
+
+            </div>      
+        </div>
+        <div id="mainContent" style="width:300px;">
+            <ul id="listview" aria-label="sticky group header" style="background-color: white;"
+                data-bind="ojComponent: {component: 'ojListView', data: dataSource, item: {template: selectTemplate, selectable: itemOnly}, expanded :'all',optionChange:functionSelectedListener, drillMode: 'collapsible', groupHeaderPosition: 'sticky', selectionMode: 'single' }">
+            </ul>
+        </div>
+        <script type="text/html" id="group_template">
+            <li>
+                <span  data-bind="text: name"></span>  <span style="float:right; padding-right: 10px;" data-bind="text: count"></span>
+            </li>
+        </script>
+        <script type="text/html" id="item_template">
+            <li  class=" item-marker oj-listview-focused-element oj-listview-item-element oj-listview-item" data-bind="attr: {id: id}">
+                <span  data-bind="text: name"></span> <span style="float:right;" > <img data-bind="visible:(status==='Configured')" src="/ic/integration/home/oracle/ics/webconsole/view/images/qual_checkmark_16_green.png" alt=""/></span>
+            </li>
+        </script>
+    </div>
+           <!-- popup Starts -->
+                            <div style="display:none; width:450px; height:150px;" id="popup1"
+                                  data-bind="ojComponent:{component: 'ojPopup',
+                                                       tail: 'simple', modality:'modeless',
+                                                       rootAttributes: {style:'min-width:150px; min-height:100px;'}}">
+                               <div class="oj-flex-item">
+                                   <div class="oj-flex oj-sm-flex-items-initial" style="padding-top:10px;">Open the file to download the code:</div>
+                                   <div class="oj-flex oj-sm-flex-items-initial" >
+                                        <img data-bind=" attr :{ src :'/ic/integration/home/oracle/ics/webconsole/view/images/func_download_16_btn_ena.png'}" /> 
+                                        <a style="padding-left: 10px;" data-bind="click :downloadJsFile"> Download to desktop </a>
+                                    </div>
+                                   <div class="oj-flex oj-sm-flex-items-initial" style="padding-top:10px;">Add your own comments:</div>
+                                   <div class="oj-flex oj-sm-flex-items-initial">
+                                        <div class="oj-flex-item">
+                                            <img style="padding-top: 10px; padding-right: 10px;" data-bind=" attr :{ src :'/ic/integration/home/oracle/ics/webconsole/view/images/func_updatebasicinfo_16_ena.png'}" /> </div> <div class="oj-flex-item"> 
+                                            <input id="annotate_id"  
+                                                    type="text"  
+                                                    data-bind="ojComponent: {component: 'ojInputText',value: selectedFileAnnotation(),optionChange: optionChangeCallback}" 
+                                                    style="padding-left: 10px;" />
+                                        </div>
+                                    </div>
+                               </div>
+                             </div>    
+                            <!-- popup ends -->
+      <form id="formId" class="oj-form">
+      <a href="#" download id="downloadFile" hidden></a>
+          <div class="oj-flex"  style="margin-left: 50px; margin-top: 30px" data-bind="visible:(selectedFuncValue()!=='NONE')">
+                  <div class="oj-flex-item" >
+                        <div class="oj-flex oj-sm-flex-items-initial">                            
+                            <div class="oj-flex-item" style="padding-top: 5px"><img data-bind=" attr :{ src : (displayParameterList()) ? '/ic/integration/home/oracle/ics/webconsole/view/images/edit_complete_icon.png' : '/ic/integration/home/oracle/ics/webconsole/view/images/edit_ready_icon.png'}"/></div>                             
+                            <div class="oj-flex-item" style=" padding-left: 20px;">
+                                <div class="oj-flex oj-sm-flex-direction-column">
+                                    <div class="oj-flex-item" style="color:Gray;font-size: 30px;" data-bind="text:selectedFunctionName()"> </div>
+				    <div class="oj-flex oj-sm-flex-items-initial">
+                                        <div class="oj-flex-item"><strong>File:</strong> </div>
+                                          <div class="oj-flex-item" style="padding-left: 10px;" id="fileNameID" ><a id="fileName_link"  
+                                                                                                                 data-bind="click: launchFileDetails, text:selectedFileName();"></a> </div> 
+                                     </div>
+                                </div>          
+                        </div>
+                  </div>
+                      <div class="oj-flex oj-sm-flex-items-initial" style="padding-top: 20px;">                            
+                        <div class="oj-flex-item" style="padding-top: 5px"><img data-bind=" attr :{ src : (displayParameterList()) ? '/ic/integration/home/oracle/ics/webconsole/view/images/edit_complete_icon.png' : '/ic/integration/home/oracle/ics/webconsole/view/images/edit_ready_icon.png'}"/></div>                                 
+                        <div class="oj-flex-item" style="padding-top: 10px; padding-left: 20px;">
+                             <div class="oj-flex oj-sm-flex-direction-column">
+                                <div class="oj-flex-item" style="color:Gray;font-size: 20px;">Classification </div>
+                                <div class="oj-flex-item" style="padding-left: 30px; padding-top: 10px;">
+                                    <div id="checkboxSetAgreeId" style="padding:8px; border: 1px solid #007CBA; "
+                                        data-bind="ojComponent: {
+                                                    component: 'ojCheckboxset',
+                                                    optionChange:orchSelectedListener,
+                                                     disabled:viewMode,
+                                                    value: selectedFuncClassification
+                                                   }" >
+                                     <span class="oj-choice-row">
+                                       <input id="ORCHESTRATION" type="checkbox" value="ORCHESTRATION">
+                                       <label for="ORCHESTRATION">Orchestration</label>
+                                     </span>
+                                   </div>
+                                </div>
+                             </div>
+                        </div>
+                   </div>
+                <div id="parameterList" data-bind="visible: displayParameterList">
+                            <div class="oj-flex oj-sm-flex-items-initial" style="padding-top: 30px;" >                            
+                              <div class="oj-flex-item" style="padding-top: 5px"><img data-bind="attr :{src :'/ic/integration/home/oracle/ics/webconsole/view/images/edit_complete_icon.png'}" /></div>                                 
+                              <div class="oj-flex-item"style="padding-top: 10px; padding-left: 20px;">
+                                   <div class="oj-flex oj-sm-flex-direction-column">
+                                       <div class="oj-flex-item" style="color:Gray;font-size: 20px;">Input Type </div>
+
+                                        <!-- ko foreach:selectedFuncInputList-->
+                                       <div class="oj-flex-item">
+                                          <div class="oj-flex oj-sm-flex-items-initial"  style="padding-top:15px;">
+                                              <div class="oj-flex-item"  style="padding-top: 5px;" data-bind="text:$data.name">  </div>
+                                           <div class="oj-flex-item" style="padding-left: 10px;">
+                                              <select id="inputTypeSelect" data-bind="ojComponent: {component: 'ojSelect',
+                                                              value: $data.type,
+                                                              disabled: $parent.viewMode,
+                                                              rootAttributes: {style:'max-width:5em'}}">
+                                                   <option value="boolean">Boolean</option>
+                                                   <option value="int">Number</option>
+                                                   <option value="string">String</option>		
+                                              </select>
+                                           </div>
+                                           <div class="oj-flex-item" style="padding-left: 55px;padding-top: 5px;"><img data-bind="visible:true,attr:{src:'/ic/integration/home/oracle/ics/webconsole/view/images/string_24_ena.png'}" alt=""/></div>
+                                       </div>
+                                      </div>
+ 				      <div class="oj-flex-item">
+                                       <a  data-bind="style:{display:($data.desc === undefined) ? 'inline' : 'none'},attr:{id:'desc_link_input_'+$index()}, click: $parent.showInputParamsDescField.bind()"  >Add a description</a>
+                                          <textarea 
+                                                    data-bind="style:{resize: 'both',display:($data.desc !== undefined) ? 'inline' : 'none'},ojComponent: {component: 'ojTextArea',value: $data.desc,placeholder:'Describe what this parameter will do',optionChange: $parent.addInputParamsDescription.bind(this,$index())},attr:{id:'input_desc_tarea_'+$index()}" >
+                                          </textarea>
+                                      </div>
+                                         <!-- /ko -->
+                                   </div>
+                         </div>
+                         </div>
+                        <div class="oj-flex oj-sm-flex-items-initial" style="padding-top: 20px;">                            
+                             <div class="oj-flex-item" style="padding-top: 5px"><img data-bind="visible:true" src="/ic/integration/home/oracle/ics/webconsole/view/images/edit_complete_icon.png" alt=""/></div>                                 
+                             <div class="oj-flex-item"style="padding-top: 10px; padding-left: 20px;">
+                                  <div class="oj-flex oj-sm-flex-direction-column">
+                                    <div class="oj-flex-item" style="color:Gray;font-size: 20px;">Output Type </div>
+
+                                     <!-- ko foreach:selectedFuncOutputList-->
+                                     <div class="oj-flex-item">
+                                         <div class="oj-flex oj-sm-flex-items-initial"  style="padding-top:15px;">
+                                             <div class="oj-flex-item"  style="padding-top: 5px;" data-bind="text:$data.name">  </div>
+                                          <div class="oj-flex-item" style="padding-left: 10px;">
+                                               <select id="outputTypeSelect" data-bind="ojComponent: {component: 'ojSelect',
+                                                             value: $data.type,
+                                                             disabled: $parent.viewMode,
+                                                             rootAttributes: {style:'max-width:5em'}}">
+                                                  <option value="boolean">Boolean</option>
+                                                  <option value="int">Number</option>
+                                                  <option value="string">String</option>		
+                                             </select>
+                                          </div>
+                                          <div class="oj-flex-item" style="padding-left: 55px;padding-top: 5px;"><img data-bind="visible:true" src="/ic/integration/home/oracle/ics/webconsole/view/images/string_24_ena.png" alt=""/></div>
+                                      </div>
+                                     </div>
+ 				     <div class="oj-flex-item">
+                                          <a  data-bind="style:{display:($data.desc===undefined) ? 'inline' : 'none'},click: $parent.showOutputParamsDescField.bind(),
+                                                         attr:{id:'output_desc_link_'+$index()}"  >Add a description</a>
+                                          <textarea 
+                                                    data-bind="style:{resize: 'both',display:($data.desc!==undefined) ? 'inline' : 'none'},ojComponent: {component: 'ojTextArea',value: $data.desc,placeholder:'Describe what this parameter will do', optionChange: $parent.addOutputParamsDescription.bind(this,$index())},attr:{id:'output_desc_tarea_'+$index()}" >
+                                          </textarea>
+                                     </div>
+                                      <!-- /ko -->
+                                  </div>
+                        </div>
+                        </div>
+               </div>
+                     
+             </div>
+  
+</div>
+      </form>
+  </div>

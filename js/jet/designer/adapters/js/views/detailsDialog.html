@@ -1,0 +1,146 @@
+<link rel="stylesheet" id="css" href="oracle/ics/webconsole/view/js/jet/css/dialog.css">        
+<div class="oj-dialog-body">
+    <div class="header1" id="basic" data-bind="text: basic"></div>
+    <div class="separator20"></div>
+    <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control1" id="label1" data-bind="text: name"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control1" data-bind="text: _name"></span>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control2" id="label2" data-bind="text: dname"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control2" data-bind="text: _dname"></span>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control3" id="label3" data-bind="text: version"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control3" data-bind="text: _version"></span>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control4" id="label4" data-bind="text: role"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control4" data-bind="text: _role"></span>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control5" id="label5" data-bind="text: description"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control5" data-bind="text: _description"></span>
+                </div>
+            </div>
+            <!-- ko if: _oversion != null && _oversion !== undefined -->
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control6" id="label6" data-bind="text: oversion"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control6" data-bind="text: _oversion"></span>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+    <div class="separator20"></div>
+    <div class="header1" id="security" data-bind="text: security"></div>
+    <div class="separator20"></div>
+    <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+            <!-- ko if: _defaultpolicy != null && _defaultpolicy !== undefined -->
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control7" id="label7" data-bind="text: defaultpolicy"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control7" data-bind="text: _defaultpolicy"></span>
+                </div>
+            </div>
+            <!-- /ko -->
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control8" id="label8" data-bind="text: supportedpolicy"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control8" data-bind="text: _supportedpolicy"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="separator20"></div>
+    <div class="header1" id="vendor" data-bind="text: vendor"></div>
+    <div class="separator20"></div>
+    <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control9" id="label9" data-bind="text: vendorname"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control9" data-bind="text: _vendorname"></span>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control10" id="label10" data-bind="text: about"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <a id="control10" data-bind="attr: { href: _about}, text: _about" target="_blank"></a>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control11" id="label11" data-bind="text: contact"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <a id="control11" data-bind="attr: { href: _contact}, text: _contact" target="_blank"></a>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control12" id="label12" data-bind="text: documentation"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <a class="wrapLink" id="control12" data-bind="attr: { href: _documentation}, text: _documentation"
+                       target="_blank"></a>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control13" id="label13" data-bind="text: release"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="control13" data-bind="text: _release"></span>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item labelDiv">
+                    <label class="label1" for="control14" id="label14" data-bind="text: support"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <a id="control14" data-bind="attr: { href: _support}, text: _support" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="oj-dialog-footer">
+    <button id="dlgCloseBtn" data-bind="ojComponent: {component: 'ojButton', label: closeButtonLabel}, click: close.bind(this)"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+    </button>
+</div>

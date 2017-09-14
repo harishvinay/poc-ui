@@ -1,0 +1,65 @@
+<div class="oj-dialog-body">
+<div id="accordionPage" data-bind="ojComponent: {component: 'ojAccordion'}">
+<div id="a1" data-bind="ojComponent: {component: 'ojCollapsible', expanded:true}">
+<span>Technical</span>
+<ul id="listview1" aria-label="" 
+       data-bind="ojComponent: {component: 'ojListView', data: dataSource1, item: {template: 'server_template'}, selectionMode: 'single'}">
+</ul>
+</div>
+  <div id="b1">
+  <span>Functional</span>
+<ul id="listview2" aria-label="" 
+       data-bind="ojComponent: {component: 'ojListView', data: dataSource2, item: {template: 'server_template'}, selectionMode: 'single'}">
+</ul>
+</div>
+<script type="text/html" id="server_template">
+    <li data-bind="attr: {id: $data['name']}">
+        <div class="oj-flex">
+            <div class="oj-lg-2 oj-md-2 oj-sm-12" style="max-width:70px;padding-bottom:5px">
+                <img data-bind="attr: {src: 'images/listView/'+ name +'.png', alt: name}"></img>
+            </div>
+            <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                <div class="oj-flex row">
+                    <div class="oj-lg-12">
+                        <span class="header" data-bind="text: 'MyWebLogic '+name"></span>
+                    </div>
+                </div>
+                <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Version: </b><span data-bind="text: version"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Nodes: </b><span data-bind="text: nodes"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>OCPUs: </b><span data-bind="text: cpu"></span></span>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Type: </b><span data-bind="text: type"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Load Balancer: </b><span data-bind="text: balancer"></span></span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                        <span class="data"><b>Memory: </b><span data-bind="text: memory + ' GB'"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+</div>
+<div class="oj-dialog-footer">
+    <button id="dialogConfirmBtn"
+            data-bind="ojComponent: {component: 'ojButton', label: confirmButtonLabel}, enable: enableConfirm, click: selfDisableAndInvoke.bind(this)"
+            autofocus="autofocus" style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default">
+    </button>
+    <button id="dlgCloseBtn"
+            data-bind="ojComponent: {component: 'ojButton', label: 'Cancel'}, click: close.bind(this)"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+    </button>
+</div>

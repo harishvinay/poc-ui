@@ -1,0 +1,96 @@
+<div class="oj-dialog-body">
+<div class="oj-form-layout">
+
+    <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline
+                oj-form-cols-labels-inline oj-form-cols-max2"    >
+      <div class="oj-flex">
+        <!--<div class="oj-flex-item">
+          <label for="inputcontrol">input 1</label>
+        </div>-->
+        <div class="oj-flex-item">
+        <label for="inputcontrol">nested row 3</label>
+          <input id="inputcontrol"
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                          value:'text', required: true}">
+        </div>
+      </div>
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <label for="textareacontrol">textarea</label>
+        </div>
+        <div class="oj-flex-item">
+          <textarea id="textareacontrol" rows="6"
+                    data-bind="ojComponent: {component: 'ojTextArea', 
+                                             value: 'text',}"></textarea>
+        </div>
+      </div>
+     
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <label for="inputcontrol2">input 2</label>
+        </div>
+        <div class="oj-flex-item">
+          <input id="inputcontrol2"
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                          value:'text'}">
+        </div>
+      </div>
+     
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <label for="inputcontrol3">input 3 longer label</label>
+        </div>
+        <div class="oj-flex-item">
+          <input id="inputcontrol3"
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                          value:'text'}">
+        </div>
+      </div>
+     
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <label for="inputcontrol4">input 4</label>
+        </div>
+        <div class="oj-flex-item">
+          <input id="inputcontrol4"
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                          value:'text'}">
+        </div>
+      </div>
+     
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <label for="inputcontrol5">input 5</label>
+        </div>
+        <div class="oj-flex-item">
+          <input id="inputcontrol5"
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                          value:'text'}">
+        </div>
+      </div>
+     
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+          <label for="inputcontrol6">input 6</label>
+        </div>
+        <div class="oj-flex-item">
+          <input id="inputcontrol6"
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                          value:'text'}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="oj-dialog-footer">
+        <button id="dialogConfirmBtn"
+                data-bind="ojComponent: {component: 'ojButton', label: confirmButtonLabel}, enable: enableConfirm, click: selfDisableAndInvoke.bind(this)"
+                autofocus="autofocus" style="margin-right: 10px;"
+                class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default">
+        </button>
+        <button id="dlgCloseBtn"
+                data-bind="ojComponent: {component: 'ojButton', label: 'Cancel'}, click: close.bind(this)"
+                style="margin-right: 10px;"
+                class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+        </button>
+    </div>

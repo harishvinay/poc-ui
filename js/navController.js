@@ -2,10 +2,12 @@ define([
         'ojs/ojcore',
         'knockout',
         'cloud-app-switcher',
+        'viewModels/dashboard',
+        'jet/designer/integrations/js/viewModels/integrations',
         'ojs/ojrouter',
         'ojs/ojmoduleanimations'
     ],
-    function (oj, ko, SuiteComponents) {
+    function (oj, ko, SuiteComponents, dashboard, integrations) {
         function ViewModel() {
             var self = this;
 
@@ -35,6 +37,14 @@ define([
                 return 'coverRight';
             };
 
+            var viewModelFactory = function (router) {
+                return {
+                    createViewModel: function (params, valueAccessor) {
+                        return Promise.resolve(dashboard);
+                    }
+                };
+            };
+
             self.router = oj.Router.rootInstance;
             self.router.configure({
                 'dashboard': {label: 'Dashboard', value: 'dashboard', isDefault: true},
@@ -45,6 +55,7 @@ define([
 
             function mergeConfig(original) {
                 return $.extend(true, {}, original, {
+                    'viewModelFactory': viewModelFactory(original),
                     'animation': oj.ModuleAnimations.switcher(switcher)
                 });
             }
