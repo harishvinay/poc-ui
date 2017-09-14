@@ -1,0 +1,13 @@
+{
+    "name": "knockout-amd-helpers",
+    "main": "build/knockout-amd-helpers.min.js",
+    "ignore": [
+        "examples",
+        "ext",
+        "spec",
+        "src",
+        "Gruntfile.js",
+        "package.json",
+        ".gitignore"
+    ]
+}

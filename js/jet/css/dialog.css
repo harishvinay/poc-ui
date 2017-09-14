@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+/* ADF Page messes with the default font set by JET on HTML. It harcodes
+   the font to 12px. Instead the font should scaled with the page zoom level */
+body {
+  font-size: inherit !important;
+}
+
+/* By default oj-row has max-width of 1440px. Override it to 100%,
+   which matches their cookbook demos */
+.oj-row {
+ max-width: 100%;
+}
+
+/* icons */
+.jm-help-icon
+{
+  height: 16px;
+  width: 16px;
+}
+
+
+#jmGlasspane {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.jmStartSpinner {
+  overflow: hidden;
+  margin: auto;
+  vertical-align: middle;
+  position: relative;
+  margin-top: -2.5em;
+  top: 50%;
+}
+
+.jmCSSSpinner {
+  font-size: 16px;
+  margin: 0px auto 10px auto;
+  width: 5.0em;
+  height: 5.0em;
+  animation: spinnerRotate 1.4s linear infinite;
+}
+
+@keyframes spinnerRotate {
+  0%{
+    transform:rotate(0deg)
+  }
+  100%{
+    transform:rotate(360deg)
+  }
+}
+
+.jmCSSSpinner .jmSpinnerDot {
+    position: absolute;
+    margin: auto;
+    width: 2.0em;
+    height: 2.0em;
+    border-radius: 100%;
+}
+
+.jmCSSSpinner .jmSpinnerDot:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(5,114,206,0.8);
+}
+
+.jmCSSSpinner .jmSpinnerDot:nth-child(3) {
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgba(5,114,206,0.6);
+}
+
+.jmCSSSpinner .jmSpinnerDot:nth-child(4) {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(5,114,206,0.4);
+}
+
+.jmCSSSpinner .jmSpinnerDot:nth-child(5) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5,114,206,0.2);
+}
+
+#jmGlasspaneText {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #898989;  
+}
+
+.header1 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.label1 {
+    font-weight: bold;
+}
+
+.labelDiv {
+    text-align: right;
+    padding-right: 20px;    
+}
+
+.separator20 {
+    height: 20px;
+    width: 10px;
+}
+
+.wrapLink {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+div.adapterDetails {
+    width: 550px!important; 
+    max-height: 800px!important;    
+}
+
+div.jetPopup {
+    border:#000000;
+    border-radius:6px;
+    overflow:hidden;
+    width: 500px; 
+    height: auto; 
+    min-width:200px; 
+    max-width:800px; 
+    min-height:200px; 
+    max-height:800px
+}
+
+div.jetPopup  div.oj-dialog-header {
+    background-color: #8d909b;
+    height:48px;
+    padding-left:25px;
+    padding-right:25px;  
+}
+
+div.jetPopup div.oj-dialog-header-close-wrapper,
+div.jetPopup span.oj-dialog-close-icon{
+    display:none;
+}
+
+div.jetPopup  span.oj-dialog-title {
+    font-size:24px;
+    font-weight:normal;
+    font-family: Helvetica;
+    color:white;
+    padding-top:4px;
+}
+
+div.jetPopup div.oj-dialog-body {
+    padding: 20px 25px 25px 25px;  
+    font-size:14px;
+}
+
+div.jetPopup button.oj-button-text-only {
+    font-size:14px !important;
+    font-weight:normal !important;
+}
+
+div.jetPopup div.oj-dialog-footer {
+      padding: 0px;
+}
+
+div.jetPopup div.oj-dialog-footer .oj-button {
+      margin-bottom: 0px;
+}
+
+.jm-dialog-header-close-wrapper {
+    float: right;
+    text-align: center;
+    cursor: default;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.jm-dialog-cancel-button{
+    background-color:transparent !important; 
+    background-image:none !important;
+}
+
+div.jetPopup button.jm-dialog-cancel-button:active {
+   background-color:#0572ce !important;
+}
+
+div.jetPopup button.jm-dialog-cancel-button:depressed {
+   background-color:#0572ce !important;
+}
+
+div.jetPopup div.jm-dialog-header-close-wrapper:hover {
+   background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+div.jetPopup div.jm-dialog-header-close-wrapper:depressed {
+   background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+div.jetPopup div.jm-dialog-header-close-wrapper:active {
+   background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.dialogContentHeaderFont{
+    font-size:18px;
+    font-weight:bold;
+}
+
+div.jetPopup .oj-combobox{
+    width:95%;
+}
+
+div.jetPopup .oj-dialog-footer {
+    padding-top: 25px;
+}
+
+
+
+
+

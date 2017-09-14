@@ -1,11 +1,12 @@
 [
   {
     "attr": {
-      "id": "dashboards",
+      "id": "dashboard",
       "label": "Dashboard",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "dashboard"
       }
     }
   },
@@ -13,9 +14,10 @@
     "attr": {
       "id": "composer",
       "label": "Integrations",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "integration"
       }
     }
   },
@@ -23,9 +25,10 @@
     "attr": {
       "id": "applications",
       "label": "Connections",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "connections"
       }
     }
   },
@@ -33,9 +36,10 @@
     "attr": {
       "id": "dvm",
       "label": "Lookups",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "lookups"
       }
     }
   },
@@ -43,9 +47,10 @@
     "attr": {
       "id": "package",
       "label": "Packages",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "packages"
       }
     }
   },
@@ -53,9 +58,10 @@
     "attr": {
       "id": "agents",
       "label": "Agents",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "agents"
       }
     }
   },
@@ -63,9 +69,10 @@
     "attr": {
       "id": "adapter",
       "label": "Adapter",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "adapters"
       }
     }
   },
@@ -73,9 +80,10 @@
     "attr": {
       "id": "apilibrary",
       "label": "Libraries",
-      "type": "URL",
+      "type": "JQUERY",
       "properties": {
-        "url": "http://localhost:8080/"
+        "event": "icsNavEvent",
+        "extraData": "libraries"
       }
     }
   }

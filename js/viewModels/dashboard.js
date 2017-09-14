@@ -4,8 +4,7 @@ define(['ojs/ojcore', 'knockout', 'jquery'],
         function DashboardViewModel() {
             var self = this;
 
-            self.name = 'ICS UI';
-            self.subname = 'Dashboard';
+            self.name = 'ICS Dashboard';
 
         }
 

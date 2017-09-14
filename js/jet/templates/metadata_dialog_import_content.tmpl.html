@@ -1,0 +1,43 @@
+<div class="oj-dialog-body">
+    <div class="oj-form-layout">
+        <div class="oj-form oj-md-labels-inline oj-flex-items-pad">
+            <div style="height:5px;"></div>
+            <div class="oj-flex">
+                <div class="oj-lg-flex-items-initial">
+                    <span title="Required" style="color:#045FAB;font-size:16px; font-weight: bold">*</span>
+                    <label id="inputFileLabel" for="metadataInputFile" data-bind="text: selectFilesText" style="white-space:  nowrap;font-size: 14px;" ></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input type="file" id="metadataInputFile" style="font-size: 14px;color:#333333; background-image: none;font-family: 'Helvetica Neue'"
+                           data-bind="attr: {accept: acceptFileTypes}, event : {change : onChange}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ko if: importMessage -->
+    <div style="height:25px;"></div>
+    <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-1 oj-md-labels-inline">
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <div class="info__icon-active"></div>
+                </div>
+                <div class="oj-flex-item">
+                    <span id="vallb" data-bind="text: importMessage"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+<div class="oj-dialog-footer">
+    <button id="dialogConfirmBtn" data-bind="ojComponent: {component: 'ojButton', label: confirmButtonLabel}, enable: enableConfirm, click: selfDisableAndInvoke.bind(this)"
+            autofocus="autofocus"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default">
+    </button>
+    <button id="dlgCloseBtn" data-bind="ojComponent: {component: 'ojButton', label: 'Cancel'}, click: close.bind(this)"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+    </button>
+</div>

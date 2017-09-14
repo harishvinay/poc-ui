@@ -4,10 +4,16 @@ define([
         'cloud-app-switcher',
         'viewModels/dashboard',
         'jet/designer/integrations/js/viewModels/integrations',
+        'jet/designer/connections/js/viewModels/connections',
+        'jet/designer/adapters/js/viewModels/adapters',
+        'jet/designer/agents/js/viewModels/agents',
+        'jet/designer/lookups/js/viewModels/lookups',
+        'jet/designer/packages/js/viewModels/packages',
+        'jet/designer/libraries/js/viewModels/libraries',
         'ojs/ojrouter',
         'ojs/ojmoduleanimations'
     ],
-    function (oj, ko, SuiteComponents, dashboard, integrations) {
+    function (oj, ko, SuiteComponents, dashboard, integrations, connections, adapters, agents, lookups, packages, libraries) {
         function ViewModel() {
             var self = this;
 
@@ -40,7 +46,23 @@ define([
             var viewModelFactory = function (router) {
                 return {
                     createViewModel: function (params, valueAccessor) {
-                        return Promise.resolve(dashboard);
+                        var state = router.params.ojRouter.parentRouter.currentState().id;
+                        if (state === 'dashboard')
+                            return Promise.resolve(dashboard);
+                        else if (state === 'integration')
+                            return Promise.resolve(integrations);
+                        else if (state === 'connections')
+                            return Promise.resolve(connections);
+                        else if (state === 'lookups')
+                            return Promise.resolve(lookups);
+                        else if (state === 'packages')
+                            return Promise.resolve(packages);
+                        else if (state === 'agents')
+                            return Promise.resolve(agents);
+                        else if (state === 'adapters')
+                            return Promise.resolve(adapters);
+                        else if (state === 'libraries')
+                            return Promise.resolve(libraries);
                     }
                 };
             };
@@ -48,7 +70,12 @@ define([
             self.router = oj.Router.rootInstance;
             self.router.configure({
                 'dashboard': {label: 'Dashboard', value: 'dashboard', isDefault: true},
+                'integration': {label: 'integration', value: 'integration'},
                 'connections': {label: 'connections', value: 'connections'},
+                'adapters': {label: 'adapters', value: 'adapters'},
+                'agents': {label: 'agents', value: 'agents'},
+                'lookups': {label: 'lookups', value: 'lookups'},
+                'packages': {label: 'packages', value: 'packages'},
                 'libraries': {label: 'libraries', value: 'libraries'}
             });
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
@@ -61,6 +88,11 @@ define([
             }
 
             self.moduleConfig = mergeConfig(self.router.moduleConfig);
+
+            var NavEventHandler = function (event, properties) {
+                self.router.go(properties.extraData);
+            };
+            $(document).on('icsNavEvent', NavEventHandler);
 
             // self.moduleConfig = ko.pureComputed(function () {
             //     return $.extend({}, self.router.moduleConfig, {

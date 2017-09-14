@@ -1,0 +1,54 @@
+<div class="oj-dialog-body">
+    <span style="width:500px" data-bind="text: certificateMessage"></span>
+    <div style="height:10px;"></div>
+    <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label id="certificateTypeLabelId" for="aliasNameId" data-bind="text: certificateTypeLabel"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <select data-bind="options: certificateTypeValues, value: selectedCertificateTypeValue"></select>
+                </div>
+            </div>
+            <div style="height:10px;"></div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label id="aliasLabelId" for="aliasNameId" data-bind="text: aliasNameLabel"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input id="aliasNameId" style="margin-left:15px;width:300px;"
+                           data-bind="textInput: aliasName, 
+                           event: {keyup: onAliasNameChange, change : confirmEnableCheck}, 
+                           ojComponent:{component:'ojInputText', 
+                           required: true, 
+                           placeholder: 'Enter Alias name'}"/>
+                </div>
+            </div>
+            <div style="height:10px;"></div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <!--<span title="Required" style="color:#045FAB;font-size:16px; font-weight: bold">*</span>-->
+                    <label id="inputFileLabel" for="metadataInputFile"
+                           style="display: inline-block; white-space:  nowrap; font-weight:bold;"
+                           data-bind="text: selectFilesText"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input type="file" id="metadataInputFile" style="margin-left:20px;width:300px;"
+                           data-bind="attr: {accept: acceptFileTypes}, event : {change : confirmEnableCheck}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="oj-dialog-footer">
+    <button id="dialogConfirmBtn" data-bind="ojComponent: {component: 'ojButton', label: confirmButtonLabel}, enable: enableConfirm, click: selfDisableAndInvoke.bind(this)"
+            autofocus="autofocus"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default">
+    </button>
+    <button id="dlgCloseBtn" data-bind="ojComponent: {component: 'ojButton', label: 'Cancel'}, click: close.bind(this)"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+    </button>
+</div>

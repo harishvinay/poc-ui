@@ -7,6 +7,7 @@ requirejs.config(
         paths:
             {
                 'knockout': '../bower_components/knockout/dist/knockout.debug',
+                'knockout-amd-helpers' : 'libs/knockout-amd-helpers/build/knockout-amd-helpers',
                 'jquery': '../bower_components/jquery/dist/jquery',
                 'jqueryui-amd': '../bower_components/jquery-ui/ui',
                 'promise': '../bower_components/es6-promise/promise',

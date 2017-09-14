@@ -16,7 +16,11 @@ define(['ojs/ojcore', 'knockout',
         
         self.handleActivated = function(info) {
             self.catalog = Catalog.app.createInstance(headerModel, filterPanelModel, listViewModel, "Library");
-        }
+        };
+
+        self.handleAttached = function (info) {
+            $(Catalog.catalogTemplate).appendTo($('#metadata-list-container'));
+        };
         
         self.createView = function() {
             return Catalog.catalogTemplate;

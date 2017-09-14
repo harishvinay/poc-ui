@@ -1,0 +1,84 @@
+<div class="oj-dialog-body">
+    <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <!--<span title="Required" style="color:#045FAB;font-size:16px; font-weight: bold">*</span>-->
+                    <label id="inputFileLabel" for="metadataInputFile" style="display: inline-block; white-space:  nowrap; font-weight:bold;"
+                           data-bind="text: selectFilesText"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input type="file" id="metadataInputFile" style="margin-left:20px;width:300px;"
+                           data-bind="attr: {accept: acceptFileTypes}, event : {change : confirmEnableCheck}"/>
+                </div>
+            </div>
+            <div style="height:5px;"></div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label id="nameLabelId" for="libraryNameId" data-bind="text: 'Name'"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input id="libraryNameId" style="margin-left:15px;width:300px;"
+                           data-bind="textInput: libraryName,
+                                      event: {keyup: onLibraryNameChange, change : confirmEnableCheck},
+                                      ojComponent:{component:'ojInputText',
+                                                    required: true,
+                                                    placeholder: 'Enter Library name'}"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label id="identifierLabelId" for="libraryIdentifierId" data-bind="text: 'Identifier'" style="align-content: flex-end"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input id="libraryIdentifierId" style="margin-left:15px;width:300px;"
+                           data-bind="textInput: libraryIdentifier,
+                                      event: {change : confirmEnableCheck},
+                                      ojComponent:{component:'ojInputText',
+                                                    required: true,
+                                                    placeholder: 'ENTER LIBRARY IDENTIFIER'}" />
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label id="versionLabelId" for="libraryVersionId" data-bind="text: 'Version'" style="align-content: flex-end"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <input id="libraryVersionId" style="margin-left:15px;width:300px;"
+                           title="Enter a version number using numbers (0-9) in the following format: major.minor.patch (xx.xx.xxxx). It cannot be longer than 10 characters."
+                           data-bind="textInput: libraryVersion,
+                                      event: {change : trimVersion},
+                                      ojComponent:{component:'ojInputText',
+                                                    required: true,
+                                                    placeholder:'01.00.0000',
+                                                    validators: [{type: 'regExp',
+                                                                  options: {pattern: '^([0-9]{0,2})(\.([0-9]{0,2})){0,1}(\.([0-9]{0,4})){0,1}$',
+                                                                            messageDetail: 'Enter a valid version number using numbers (0-9) in the following format: major.minor.patch (xx.xx.xxxx).'}}]
+                                                    }"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label id="descLabelId" for="libraryDescId" data-bind="text: 'Description'" style="align-content: flex-end"></label>
+                </div>
+                <div class="oj-flex-item">
+                    <textarea id="libraryDescId" rows="6" style="margin-left:15px;width:300px;"
+                              data-bind="ojComponent: {component: 'ojTextArea',
+                                                        value: libraryDesc,
+                                                        placeholder: 'Enter a brief description...'}"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="oj-dialog-footer">
+    <button id="dialogConfirmBtn" data-bind="ojComponent: {component: 'ojButton', label: confirmButtonLabel}, enable: enableConfirm, click: selfDisableAndInvoke.bind(this)"
+            autofocus="autofocus"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default">
+    </button>
+    <button id="dlgCloseBtn" data-bind="ojComponent: {component: 'ojButton', label: 'Cancel'}, click: close.bind(this)"
+            style="margin-right: 10px;"
+            class="oj-button oj-component oj-enabled oj-button-full-chrome oj-button-text-only oj-component-initnode oj-default jm-dialog-cancel-button">
+    </button>
+</div>

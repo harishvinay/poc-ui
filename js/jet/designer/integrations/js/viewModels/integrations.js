@@ -7,26 +7,30 @@
 /**
  * integrations module
  */
-define(['ojs/ojcore', 'knockout', 
-                    'metadata-list-component',
-                    'jet/designer/integrations/js/viewModels/headerModel',
-                    'jet/designer/integrations/js/viewModels/filterPanelModel',
-                    'jet/designer/integrations/js/viewModels/listViewModel'
+define(['ojs/ojcore', 'knockout',
+    'metadata-list-component',
+    'jet/designer/integrations/js/viewModels/headerModel',
+    'jet/designer/integrations/js/viewModels/filterPanelModel',
+    'jet/designer/integrations/js/viewModels/listViewModel'
 ], function (oj, ko, Catalog, headerModel, filterPanelModel, listViewModel) {
     /**
      * The view model for the main content view template
      */
     function integrationsContentViewModel() {
         var self = this;
-        
-        self.handleActivated = function(info) {
+
+        self.handleActivated = function (info) {
             self.catalog = Catalog.app.createInstance(headerModel, filterPanelModel, listViewModel, "Integration");
-        }
-        
-        self.createView = function() {
+        };
+
+        self.handleAttached = function (info) {
+            $(Catalog.catalogTemplate).appendTo($('#metadata-list-container'));
+        };
+
+        self.createView = function () {
             return Catalog.catalogTemplate;
-        }            
+        }
     }
-    
+
     return new integrationsContentViewModel;
 });
